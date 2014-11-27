@@ -1,3 +1,12 @@
+'''
+DESCRIPTION:
+
+This is a table parser
+
+'''
+
+
+
 import sys
 
 FileName=sys.argv[1]
