@@ -34,7 +34,7 @@
 #                                                                           ${base}.deseq.diffexpres.pdf 
 #
 
-#   --filterNoPolya < set to "YES" if to remove some TEs from the table (those that are matched by "toFilter")
+#   --filterNoPolya   <  set to "YES" if to remove some TEs from the table (those that are matched by "toFilter")
 
 # NOTE: MORE FILTERING INSIDE: rows that have 0-value in all columns are not included into the analysis
 
@@ -47,7 +47,7 @@ table.file       <-    NULL
 
 treatCountCols   <-    NULL
 contrCountCols   <-    NULL
-filterNoPolya  <-    "NO"
+filterNoPolya    <-    "NO"
 skipped_ids      <-    NULL
 
 rownamesCol      <-    NULL 
