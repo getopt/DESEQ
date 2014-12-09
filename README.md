@@ -17,9 +17,13 @@ Note that in the future we are likely to transition to
 ```
 R --vanilla --args --table=example.tab  --header="YES" --rownamesCol=1 --treatCountCols=2,3 --contrCountCols=4,5 --outfiBaseTab=example --outfiBasePNG=example --filterNoPolya "YES" < DESEQ/deseq.r 
 ```
-The input table
-[example.tab](https://github.com/getopt/DESEQ/blob/master/Data/example.tab) and
-output files are ind `Data/` directory of this repository. The head of input
+
+The example input file [example.tab](https://github.com/getopt/DESEQ/blob/master/Data/example.tab) and
+as well as the output files are saved in `Data/` directory of this repository. 
+
+
+**INPUT** The top of the input file with counts of reads per gene in from four
+experiments (two control replicates and two treatment replicates)
 [example.tab](https://github.com/getopt/DESEQ/blob/master/Data/example.tab)
 file: 
 
@@ -38,29 +42,11 @@ Gene          cont_rep1   cont_rep2    treat_rep1  treat_rep2
 4EHP            52         50             70          10
 ```
 
-In the above example, two text ouput files are generated:
+**OUTPUT** Following four files are generated:
 
-1. [example.deseq.Results_all.tab.SKIPPED_IDS](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.Results_all.tab.SKIPPED_IDS) 
-    file with gene names that were sckipped from the analysis
-
-```
-$ head example.deseq.Results_all.tab.SKIPPED_IDS 
-
-mtRNApol
-5.8SrRNA
-LSU-rRNA_Dme|Protostomia
-LSU-rRNA_Hsa|Metazoa
-SSU-rRNA_Dme|Protostomia
-SSU-rRNA_Hsa|Metazoa
-l(2)not
-l(3)neo18
-l(3)neo38
-l(3)neo43
-```
-
-2. [example.deseq.Results_all.tab](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.Results_all.tab)
-   this is a standard DESeq ouput table. Note how rows with `Inf` and `NA`
-   values are skipped using `cat` and `grep` for viewing the table
+- [example.deseq.Results_all.tab](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.Results_all.tab)
+  this is a standard DESeq ouput table. Note how rows with `Inf` and `NA`
+  values are skipped using `cat` and `grep` for viewing the table
 
 ```
 $ cat example.deseq.Results_all.tab | grep -v -P '\tInf\t' | grep -v -P '\tNA\t' | head
@@ -77,12 +63,29 @@ CG4363  18.7099759644333    1.75309866697042    35.6668532618962    20.345034728
 CG30108 6.50521297073474    0.621689856756951   12.3887360847125    19.9275184403658    4.31669015846702    0.237003124886577   1
 ```
 
-3. [example.deseq.dispersion.png](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.dispersion.png)
+- [example.deseq.dispersion.png](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.dispersion.png)
     plot of disperition estimates 
 
-4. [example.deseq.diffexpres.png](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.dispersion.png)
+- [example.deseq.diffexpres.png](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.dispersion.png)
    plot of differential expression estimates
 
+-  [example.deseq.Results_all.tab.SKIPPED_IDS](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.Results_all.tab.SKIPPED_IDS) 
+    file with gene names that were sckipped from the analysis
+
+```
+$ head example.deseq.Results_all.tab.SKIPPED_IDS 
+
+mtRNApol
+5.8SrRNA
+LSU-rRNA_Dme|Protostomia
+LSU-rRNA_Hsa|Metazoa
+SSU-rRNA_Dme|Protostomia
+SSU-rRNA_Hsa|Metazoa
+l(2)not
+l(3)neo18
+l(3)neo38
+l(3)neo43
+```
 
 
 ### Summary usage:
@@ -147,4 +150,4 @@ that have 0-value in all columns are not included into the analysis. Use of thes
 filtering steps will  results with `Inf` and `NA` values*
 
 ### Acknowledgments 
-Thanks to **Junho Hur** for providing example.tab data file
+Thanks to **Junho Hur** for providing the data file [example.tab](https://github.com/getopt/DESEQ/blob/master/Data/example.tab)
