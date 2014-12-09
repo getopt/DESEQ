@@ -1,3 +1,6 @@
+# Rsync to local directories
+00_rsync_to_local.sh
+
 # History files
 .Rhistory
 
