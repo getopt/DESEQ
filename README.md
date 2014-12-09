@@ -77,10 +77,10 @@ CG4363  18.7099759644333    1.75309866697042    35.6668532618962    20.345034728
 CG30108 6.50521297073474    0.621689856756951   12.3887360847125    19.9275184403658    4.31669015846702    0.237003124886577   1
 ```
 
-3. [outfi.deseq.dispersion.png](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.dispersion.png)
+3. [example.deseq.dispersion.png](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.dispersion.png)
     plot of disperition estimates 
 
-4. [outfi.deseq.diffexpres.png](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.dispersion.png)
+4. [example.deseq.diffexpres.png](https://github.com/getopt/DESEQ/blob/master/Data/example.deseq.dispersion.png)
    plot of differential expression estimates
 
 
@@ -103,7 +103,7 @@ R --vanilla --args --table=<file.tab>
 ### Description of arguments:
 ```
    --table            :   file with first column as row names and two columns
-                      :   providing counts (values will be rounded to integers)
+                          providing counts (values will be rounded to integers)
 
    --header           :   "YES" or "NO" (default "NO"; header isn't important
                           as such, only important for correct reading of the table)
@@ -115,21 +115,21 @@ R --vanilla --args --table=<file.tab>
 
 
    --method           :   "pooled" or "blind" method of fitting dispersion model. 
-                      :    Use "pooled" if you have replicates, "blind" if you 
-                      :    do not have replicates. Default "pooled"
+                           Use "pooled" if you have replicates, "blind" if you 
+                           do not have replicates. Default "pooled"
 
    --sharingMode      :   "maximum" or "fit-only" mode of fitting dispersion 
-                      :    model. Use "maximum" if you have replicates, 
-                      :    "fit-only" if you do not have replicates. Default: "maximum"
+                           model. Use "maximum" if you have replicates, 
+                           "fit-only" if you do not have replicates. Default: "maximum"
 
    --fitType          :   "parametric" or "local" mode of fitting dispersion model.
-                      :   "parametric" (default) is recommended. But it doesn't 
-                      :    work sometimes for unknown reasons, suggested alternative 
-                      :   "local". Default: "parametric" 
+                          "parametric" (default) is recommended. But it doesn't 
+                           work sometimes for unknown reasons, suggested alternative 
+                          "local". Default: "parametric" 
 
 
    --outfiBaseTAB     :   path/nameBase of for the output files: 
-                      :                                ${base}.deseq.Results_all.tab
+                                                       ${base}.deseq.Results_all.tab
    --outfiBasePNG     :   path/nameBase of for output PNGs. Two will be written: 
                                                        ${base}.deseq.dispersion.png 
                                                        ${base}.deseq.diffexpres.png 
