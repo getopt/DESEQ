@@ -115,7 +115,7 @@ if(headerPresent == "NO"){
     rownames(table) <-   table[,rownamesCol]
 }
 if(headerPresent == "YES"){
-    table         <-   read.table(table.file, sep = "\t", header = TRUE, as.is = T)
+    table         <-   read.table(table.file, sep = "\t", header = TRUE, as.is = T, skip = 1)
     rownames(table) <-   table[,rownamesCol]
 }
 if(headerPresent != "YES" & headerPresent != "YES"){
